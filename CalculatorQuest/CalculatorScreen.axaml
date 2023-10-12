@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="350"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="320"
         x:Class="CalculatorQuest.CalculatorScreen"
         Title="CalculatorQuest"
         Background="#89A6C3">
@@ -29,19 +29,20 @@
                         
                 </Style>
         </Window.Styles>
-        <Border BorderBrush="Black" BorderThickness="5" Margin="20" CornerRadius="5">
+        <Border BorderBrush="Black" BorderThickness="5" Margin="20,20,20,22" CornerRadius="5">
         <StackPanel Height="" Width="">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="2">
                         <StackPanel>
                                 <Border BorderBrush="DimGray" BorderThickness="3" CornerRadius="5" Margin="0, 0, 0, 5">
                                         <StackPanel>
                                                 <Label Name="Operation" Height="25"></Label>
-                                                <Label Name="Result" HorizontalAlignment="Right">=</Label>
+                                                <Label Name="Result" Height="25" HorizontalAlignment="Right"></Label>
                                         </StackPanel>
                                 </Border>
                         </StackPanel>
                 <Grid>
                         <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
@@ -53,29 +54,31 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Button Classes="Toto Clear" Grid.Column="0" Grid.Row="0" Click="ClearAl" Name="ClearAll">C</Button>
-                        <Button Classes="Toto Sup" Grid.Column="1" Grid.Row="0" Click="ClearEnt" Name="ClearEntry">CE</Button>
-                        <Button Classes="Toto Sup" Grid.Column="2" Grid.Row="0" Click="Delete" Name="Del">DEL</Button>
-                        <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="1" Click="Add" Name="Mod">%</Button>
-                        <Button Classes="Toto Operator" Grid.Column="1" Grid.Row="1" Click="Add" Name="Divide">/</Button>
-                        <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="1" Click="Add" Name="Multiply">x</Button>
-                        <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="2" Name="Sign">+/-</Button>
-                        <Button Classes="Toto Operator" Grid.Column="1" Grid.Row="2" Click="Add" Name="More">+</Button>
-                        <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="2" Click="Add" Name="Less">-</Button>
-                        <Button Classes="Toto Number" Grid.Column="0" Grid.Row="3" Click="Add" Name="One">1</Button>
-                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="3" Click="Add" Name="Two">2</Button>
-                        <Button Classes="Toto Number" Grid.Column="2" Grid.Row="3" Click="Add" Name="Three">3</Button>
-                        <Button Classes="Toto Number" Grid.Column="0" Grid.Row="4" Click="Add" Name="Four">4</Button>
-                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="4" Click="Add" Name="Five">5</Button>
-                        <Button Classes="Toto Number" Grid.Column="2" Grid.Row="4" Click="Add" Name="Six">6</Button>
-                        <Button Classes="Toto Number" Grid.Column="0" Grid.Row="5" Click="Add" Name="Seven">7</Button>
-                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="5" Click="Add" Name="Eight">8</Button>
-                        <Button Classes="Toto Number" Grid.Column="2" Grid.Row="5" Click="Add" Name="Nine">9</Button>
-                        <Button Classes="Toto " Grid.Column="0" Grid.Row="6" Click="Add" Name="Point">,</Button>
-                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="6" Click="Add" Name="Zero">0</Button>
-                        <Button Classes="Toto" Grid.Column="2" Grid.Row="6" Click="Operator">=</Button>
+                        <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="0" Click="Click_ope" Name="Mod">%</Button>
+                        <Button Classes="Toto Clear" Grid.Column="1" Grid.Row="0" Click="ClearAl" Name="ClearAll">C</Button>
+                        <Button Classes="Toto Sup" Grid.Column="2" Grid.Row="0" Click="ClearEnt" Name="ClearEntry">CE</Button>
+                        <Button Classes="Toto Sup" Grid.Column="3" Grid.Row="0" Click="Delete" Name="Del">DEL</Button>
+                        <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="1" Click="ClearAl" Name="Inverse">1/x</Button>
+                        <Button Classes="Toto Operator" Grid.Column="1" Grid.Row="1" Click="ClearAl" Name="Square">x²</Button>
+                        <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="1" Click="Click_number" Name="Sqrt">√</Button>
+                        <Button Classes="Toto Operator" Grid.Column="3" Grid.Row="1" Click="Click_ope" Name="Divide">/</Button>
+                        <Button Classes="Toto Number" Grid.Column="0" Grid.Row="2" Click="Click_number" Name="One">1</Button>
+                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="2" Click="Click_number" Name="Two">2</Button>
+                        <Button Classes="Toto Number" Grid.Column="2" Grid.Row="2" Click="Click_number" Name="Three">3</Button>
+                        <Button Classes="Toto Operator" Grid.Column="3" Grid.Row="2" Click="Click_ope" Name="Multiply">x</Button>
+                        <Button Classes="Toto Number" Grid.Column="0" Grid.Row="3" Click="Click_number" Name="Four">4</Button>
+                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="3" Click="Click_number" Name="Five">5</Button>
+                        <Button Classes="Toto Number" Grid.Column="2" Grid.Row="3" Click="Click_number" Name="Six">6</Button>
+                        <Button Classes="Toto Operator" Grid.Column="3" Grid.Row="3" Click="Click_ope" Name="Less">-</Button>
+                        <Button Classes="Toto Number" Grid.Column="0" Grid.Row="4" Click="Click_number" Name="Seven">7</Button>
+                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="4" Click="Click_number" Name="Eight">8</Button>
+                        <Button Classes="Toto Number" Grid.Column="2" Grid.Row="4" Click="Click_number" Name="Nine">9</Button>
+                        <Button Classes="Toto Operator" Grid.Column="3" Grid.Row="4" Click="Click_ope" Name="More">+</Button>
+                        <Button Classes="Toto " Grid.Column="0" Grid.Row="5" Click="Click_number" Name="Point">,</Button>
+                        <Button Classes="Toto Number" Grid.Column="1" Grid.Row="5" Click="Click_number" Name="Zero">0</Button>
+                        <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="5" Click="Sign_" Name="Sign">+/-</Button>
+                        <Button Classes="Toto" Grid.Column="3" Grid.Row="5" Click="Operator">=</Button>
                 </Grid>
         </StackPanel>
         </StackPanel>
