@@ -20,30 +20,49 @@ public class Calc
         ope = "";
     }
     public string Operator()
-{
-    double r1 = 0, r2 = 0;
+    {
+        double r1;
+        double r2;
     Console.WriteLine("member_1 : " + member_1);
     Console.WriteLine("ope : " + ope);
     Console.WriteLine("member_2 : " + member_2);
-    
-    if (member_1.StartsWith("1/"))
+    if (member_1.Length > 2)
     {
-        string numberString = member_1.Substring(2);
-        if (double.TryParse(numberString, out double num) && num != 0)
+        if (member_1.StartsWith("1/"))
         {
-            r1 = 1 / num;
-        }
-        else
-        {
-            return "Unable to calculate the inverse of the first member";
+            member_1 = member_1.Replace("1/", "inv");
+            Console.WriteLine("1/ to inv");
+            Console.WriteLine(member_1);
         }
     }
+    if (member_2.Length > 2)
+    {
+        if (member_2.StartsWith("1/"))
+        {
+            member_2 = member_2.Replace("1/", "inv");
+            Console.WriteLine("1/ to inv");
+            Console.WriteLine(member_2);
+        }
+    }
+    
     if (member_1.Contains("√"))
     {
         string numberString = member_1.Replace("√", "");
         if (double.TryParse(numberString, out double num))
         {
             r1 = Math.Sqrt(num);
+        }
+        else
+        {
+            return "Unable to parse the first member as a number";
+        }
+    }
+    if (member_1.Contains("inv"))
+    {
+        string invString = member_1.Replace("inv", "");
+        if (double.TryParse(invString, out double num))
+        {
+            r1 = 1/ num;
         }
         else
         {
@@ -69,16 +88,16 @@ public class Calc
             return "First member is not a number";
         }
     }
-    if (member_2.StartsWith("1/"))
+    if (member_2.Contains("inv"))
     {
-        string numberString = member_2.Substring(2);
-        if (double.TryParse(numberString, out double num) && num != 0)
+        string invString = member_2.Replace("inv", "");
+        if (double.TryParse(invString, out double num))
         {
-            r2 = 1 / num;
+            r2 = 1/ num;
         }
         else
         {
-            return "Unable to calculate the inverse of the second member";
+            return "Unable to parse the first member as a number";
         }
     }
     if (member_2.Contains("√"))
