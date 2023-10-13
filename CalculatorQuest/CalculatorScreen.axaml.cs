@@ -101,4 +101,43 @@ public partial class CalculatorScreen : Window
             Console.WriteLine("Signe retiré");
         }
     }
+
+    private void Square_root(object? sender, RoutedEventArgs e)
+    {
+        Console.WriteLine(Result.Content.ToString());
+        Button? clickedButton = (sender as Button);
+        if (string.IsNullOrEmpty(Result.Content.ToString()) || Result.Content.ToString()[Result.Content.ToString().Length -1 ] != '\u221a' )
+        {
+            Result.Content += "\u221a";
+            Console.WriteLine("Racine ajoutée");
+        }
+        else if (Result.Content.ToString() == "\u221a"){
+            Result.Content = "";
+            Console.WriteLine("Racine retirée");
+        }
+        else
+        {
+            Result.Content = Result.Content.ToString().Substring(1,Result.Content.ToString().Length-2);
+            Console.WriteLine("Racine retirée");
+        }
+    }
+    private void Power(object? sender, RoutedEventArgs e)
+    {
+        Button? clickedButton = (sender as Button);
+        if (string.IsNullOrEmpty(Result.Content.ToString()))
+        {
+            Result.Content = "";
+            Console.WriteLine("carré impossible");
+        }
+        else if (Result.Content.ToString().Substring(Result.Content.ToString().Length -1 ) != "²" )
+        {
+            Result.Content += "²";
+            Console.WriteLine("carré ajoutée");
+        }
+        else
+        {
+            Result.Content = Result.Content.ToString().Remove(Result.Content.ToString().Length - 1);;
+            Console.WriteLine("carré retirée");
+        }
+    }
 }

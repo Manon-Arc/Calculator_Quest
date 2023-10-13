@@ -60,8 +60,8 @@
                         <Button Classes="Toto Sup" Grid.Column="2" Grid.Row="0" Click="ClearEnt" Name="ClearEntry">CE</Button>
                         <Button Classes="Toto Sup" Grid.Column="3" Grid.Row="0" Click="Delete" Name="Del">DEL</Button>
                         <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="1" Click="ClearAl" Name="Inverse">1/x</Button>
-                        <Button Classes="Toto Operator" Grid.Column="1" Grid.Row="1" Click="ClearAl" Name="Square">x²</Button>
-                        <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="1" Click="Click_number" Name="Sqrt">√</Button>
+                        <Button Classes="Toto Operator" Grid.Column="1" Grid.Row="1" Click="Power" Name="Square">x²</Button>
+                        <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="1" Click="Square_root" Name="Sqrt">√</Button>
                         <Button Classes="Toto Operator" Grid.Column="3" Grid.Row="1" Click="Click_ope" Name="Divide">/</Button>
                         <Button Classes="Toto Number" Grid.Column="0" Grid.Row="2" Click="Click_number" Name="One">1</Button>
                         <Button Classes="Toto Number" Grid.Column="1" Grid.Row="2" Click="Click_number" Name="Two">2</Button>
