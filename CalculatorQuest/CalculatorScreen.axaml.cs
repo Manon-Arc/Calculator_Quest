@@ -96,7 +96,6 @@ public partial class CalculatorScreen : Window
             Console.WriteLine("Signe ajouté");
         }
         else {
-            Console.WriteLine("t");
             Result.Content = Result.Content.ToString().Substring(1,Result.Content.ToString().Length-1);
             Console.WriteLine("Signe retiré");
         }
@@ -138,6 +137,28 @@ public partial class CalculatorScreen : Window
         {
             Result.Content = Result.Content.ToString().Remove(Result.Content.ToString().Length - 1);;
             Console.WriteLine("carré retirée");
+        }
+    }
+    private void Inv(object? sender, RoutedEventArgs e)
+    {
+        Button? clickedButton = (sender as Button);
+        if (string.IsNullOrEmpty(Result.Content.ToString()))
+        {
+            Result.Content = "";
+            Console.WriteLine("inverse impossible");
+        }
+        else
+        {
+            if (Result.Content.ToString().StartsWith("1/"))
+            {
+                Result.Content = Result.Content.ToString().Substring(2);
+                Console.WriteLine("inverse retiré");
+            }
+            else
+            {
+                Result.Content = "1/" + Result.Content;
+                Console.WriteLine("inverse ajouté");
+            }
         }
     }
 }

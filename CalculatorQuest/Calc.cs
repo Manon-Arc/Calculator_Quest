@@ -21,12 +21,23 @@ public class Calc
     }
     public string Operator()
 {
-    double r1, r2;
-
+    double r1 = 0, r2 = 0;
     Console.WriteLine("member_1 : " + member_1);
     Console.WriteLine("ope : " + ope);
     Console.WriteLine("member_2 : " + member_2);
-
+    
+    if (member_1.StartsWith("1/"))
+    {
+        string numberString = member_1.Substring(2);
+        if (double.TryParse(numberString, out double num) && num != 0)
+        {
+            r1 = 1 / num;
+        }
+        else
+        {
+            return "Unable to calculate the inverse of the first member";
+        }
+    }
     if (member_1.Contains("√"))
     {
         string numberString = member_1.Replace("√", "");
@@ -58,7 +69,18 @@ public class Calc
             return "First member is not a number";
         }
     }
-
+    if (member_2.StartsWith("1/"))
+    {
+        string numberString = member_2.Substring(2);
+        if (double.TryParse(numberString, out double num) && num != 0)
+        {
+            r2 = 1 / num;
+        }
+        else
+        {
+            return "Unable to calculate the inverse of the second member";
+        }
+    }
     if (member_2.Contains("√"))
     {
         string numberString = member_2.Replace("√", "");
@@ -116,12 +138,17 @@ public class Calc
             }
             res = r1 / r2;
             break;
-
+        case "1/":
+            if (r2 == 0)
+            {
+                return "Division by 0 is not possible";
+            }
+            res = r1 / r2;
+            break;
         default:
             return "Invalid operator";
     }
     return res.ToString();
-}
-
+    }
 }
 

@@ -59,7 +59,7 @@
                         <Button Classes="Toto Clear" Grid.Column="1" Grid.Row="0" Click="ClearAl" Name="ClearAll">C</Button>
                         <Button Classes="Toto Sup" Grid.Column="2" Grid.Row="0" Click="ClearEnt" Name="ClearEntry">CE</Button>
                         <Button Classes="Toto Sup" Grid.Column="3" Grid.Row="0" Click="Delete" Name="Del">DEL</Button>
-                        <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="1" Click="ClearAl" Name="Inverse">1/x</Button>
+                        <Button Classes="Toto Operator" Grid.Column="0" Grid.Row="1" Click="Inv" Name="Inverse">1/x</Button>
                         <Button Classes="Toto Operator" Grid.Column="1" Grid.Row="1" Click="Power" Name="Square">x²</Button>
                         <Button Classes="Toto Operator" Grid.Column="2" Grid.Row="1" Click="Square_root" Name="Sqrt">√</Button>
                         <Button Classes="Toto Operator" Grid.Column="3" Grid.Row="1" Click="Click_ope" Name="Divide">/</Button>
