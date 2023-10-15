@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -10,8 +9,8 @@ public partial class CalculatorScreen : Window
     private Calc _calc = new Calc();
     public CalculatorScreen()
     {
-        this.Height = 320;
-        this.Width = 250;
+        Height = 320;
+        Width = 250;
         
         InitializeComponent();
         Result.Content = "";
@@ -142,23 +141,15 @@ public partial class CalculatorScreen : Window
     private void Inv(object? sender, RoutedEventArgs e)
     {
         Button? clickedButton = (sender as Button);
-        if (string.IsNullOrEmpty(Result.Content.ToString()))
+        if (Result.Content.ToString().StartsWith("1/"))
         {
-            Result.Content = "";
-            Console.WriteLine("inverse impossible");
+            Result.Content = Result.Content.ToString().Substring(2);
+            Console.WriteLine("inverse retiré");
         }
         else
         {
-            if (Result.Content.ToString().StartsWith("1/"))
-            {
-                Result.Content = Result.Content.ToString().Substring(2);
-                Console.WriteLine("inverse retiré");
-            }
-            else
-            {
-                Result.Content = "1/" + Result.Content;
-                Console.WriteLine("inverse ajouté");
-            }
+            Result.Content = "1/" + Result.Content;
+            Console.WriteLine("inverse ajouté");
         }
     }
 }

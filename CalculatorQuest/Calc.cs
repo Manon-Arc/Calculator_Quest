@@ -20,12 +20,15 @@ public class Calc
         ope = "";
     }
     public string Operator()
-    {
-        double r1;
-        double r2;
+{
+    double r1;
+    double r2;
+    double res;
+
     Console.WriteLine("member_1 : " + member_1);
     Console.WriteLine("ope : " + ope);
     Console.WriteLine("member_2 : " + member_2);
+
     if (member_1.Length > 2)
     {
         if (member_1.StartsWith("1/"))
@@ -35,6 +38,7 @@ public class Calc
             Console.WriteLine(member_1);
         }
     }
+
     if (member_2.Length > 2)
     {
         if (member_2.StartsWith("1/"))
@@ -44,7 +48,7 @@ public class Calc
             Console.WriteLine(member_2);
         }
     }
-    
+
     if (member_1.Contains("√"))
     {
         string numberString = member_1.Replace("√", "");
@@ -57,12 +61,12 @@ public class Calc
             return "Unable to parse the first member as a number";
         }
     }
-    if (member_1.Contains("inv"))
+    else if (member_1.Contains("inv"))
     {
         string invString = member_1.Replace("inv", "");
         if (double.TryParse(invString, out double num))
         {
-            r1 = 1/ num;
+            r1 = 1 / num;
         }
         else
         {
@@ -88,24 +92,25 @@ public class Calc
             return "First member is not a number";
         }
     }
-    if (member_2.Contains("inv"))
-    {
-        string invString = member_2.Replace("inv", "");
-        if (double.TryParse(invString, out double num))
-        {
-            r2 = 1/ num;
-        }
-        else
-        {
-            return "Unable to parse the first member as a number";
-        }
-    }
+
     if (member_2.Contains("√"))
     {
         string numberString = member_2.Replace("√", "");
         if (double.TryParse(numberString, out double num))
         {
             r2 = Math.Sqrt(num);
+        }
+        else
+        {
+            return "Unable to parse the second member as a number";
+        }
+    }
+    else if (member_2.Contains("inv"))
+    {
+        string invString = member_2.Replace("inv", "");
+        if (double.TryParse(invString, out double num))
+        {
+            r2 = 1 / num;
         }
         else
         {
@@ -137,27 +142,16 @@ public class Calc
         case "+":
             res = r1 + r2;
             break;
-
         case "-":
             res = r1 - r2;
             break;
-
         case "x":
             res = r1 * r2;
             break;
-
         case "%":
             res = r1 % r2;
             break;
-
         case "/":
-            if (r2 == 0)
-            {
-                return "Division by 0 is not possible";
-            }
-            res = r1 / r2;
-            break;
-        case "1/":
             if (r2 == 0)
             {
                 return "Division by 0 is not possible";
@@ -167,7 +161,9 @@ public class Calc
         default:
             return "Invalid operator";
     }
+
     return res.ToString();
     }
+    
 }
 
