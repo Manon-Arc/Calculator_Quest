@@ -11,7 +11,7 @@ public class Calc
     public string member_1 { get; set; }
     public string ope { get; set; } = "";
     public string member_2 { get; set; } = "";
-    public double res { get; set; }
+    public string res { get; set; }
 
     public Calc()
     {
@@ -164,6 +164,5 @@ public class Calc
 
     return res.ToString();
     }
-    
 }
 

@@ -20,13 +20,13 @@ public partial class CalculatorScreen : Window
 
     private void Click_number(object? sender, RoutedEventArgs routedEventArgs)
     {
-        if (_calc.res != 0f)
+        if (_calc.res != "")
         {
+            Console.WriteLine("number présent on clean");
             ClearAl(sender, routedEventArgs);
         }
         Button? clickedButton = (sender as Button);
         Result.Content += clickedButton.Content.ToString();
-        
     }
     
     private void Click_ope(object? sender, RoutedEventArgs routedEventArgs)
@@ -34,7 +34,7 @@ public partial class CalculatorScreen : Window
         Button? clickedButton = (sender as Button);
         if (_calc.ope == "")
         {
-            Console.WriteLine("on add");
+            Console.WriteLine("ope");
             Operation.Content += Result.Content + clickedButton.Content.ToString();
             _calc.member_1 = Result.Content.ToString();
             Result.Content = "";
@@ -54,7 +54,8 @@ public partial class CalculatorScreen : Window
         Operation.Content += Result.Content.ToString();
         if (!((_calc.member_2 == "" && _calc.ope == "") || (_calc.member_1 == "")))
         {
-            Result.Content = "=" + _calc.Operator();
+            _calc.res = _calc.Operator();
+            Result.Content = "=" + _calc.res;
         }
     }
 
@@ -65,7 +66,8 @@ public partial class CalculatorScreen : Window
         _calc.ope = "";
         _calc.member_1 = "";
         _calc.member_2 = "";
-        _calc.res = 0f;
+        _calc.res = "";
+        Console.WriteLine("Clean entry");
     }
     private void ClearAl(object? sender, RoutedEventArgs e)
     {
@@ -75,7 +77,8 @@ public partial class CalculatorScreen : Window
         _calc.ope = "";
         _calc.member_1 = "";
         _calc.member_2 = "";
-        _calc.res = 0f;
+        _calc.res = "";
+        Console.WriteLine("Clean all");
     }
     private void Delete(object? sender, RoutedEventArgs e)
     {
