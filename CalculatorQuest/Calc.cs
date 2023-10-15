@@ -1,13 +1,9 @@
-//https://codes-sources.commentcamarche.net/forum/affich-1370965-faire-une-calculatrice-avec-c-debutant
-
 using System;
-using System.Linq;
 
 namespace CalculatorQuest;
 
 public class Calc
 {
-    private string[] _signs { get; } = { "+", "-", "x", "/", "%" };
     public string member_1 { get; set; }
     public string ope { get; set; } = "";
     public string member_2 { get; set; } = "";
@@ -34,8 +30,6 @@ public class Calc
         if (member_1.StartsWith("1/"))
         {
             member_1 = member_1.Replace("1/", "inv");
-            Console.WriteLine("1/ to inv");
-            Console.WriteLine(member_1);
         }
     }
 
@@ -44,8 +38,6 @@ public class Calc
         if (member_2.StartsWith("1/"))
         {
             member_2 = member_2.Replace("1/", "inv");
-            Console.WriteLine("1/ to inv");
-            Console.WriteLine(member_2);
         }
     }
 
@@ -136,7 +128,9 @@ public class Calc
             return "Second member is not a number";
         }
     }
-
+    Console.WriteLine("r1 : " + r1);
+    Console.WriteLine("ope : " + ope);
+    Console.WriteLine("r2 : " + r2);
     switch (ope)
     {
         case "+":
@@ -161,7 +155,7 @@ public class Calc
         default:
             return "Invalid operator";
     }
-
+    Console.WriteLine("res : " + res);
     return res.ToString();
     }
 }

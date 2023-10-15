@@ -27,6 +27,7 @@ public partial class CalculatorScreen : Window
         }
         Button? clickedButton = (sender as Button);
         Result.Content += clickedButton.Content.ToString();
+        Console.WriteLine("number add");
     }
     
     private void Click_ope(object? sender, RoutedEventArgs routedEventArgs)
@@ -34,7 +35,6 @@ public partial class CalculatorScreen : Window
         Button? clickedButton = (sender as Button);
         if (_calc.ope == "")
         {
-            Console.WriteLine("ope");
             Operation.Content += Result.Content + clickedButton.Content.ToString();
             _calc.member_1 = Result.Content.ToString();
             Result.Content = "";
