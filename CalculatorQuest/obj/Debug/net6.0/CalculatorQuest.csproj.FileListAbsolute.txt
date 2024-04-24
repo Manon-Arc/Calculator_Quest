@@ -126,6 +126,7 @@ C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\o
 C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\refint\CalculatorQuest.dll
 C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\CalculatorQuest.dll
 C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\CalculatorQuest.pdb
-C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\CalculatorQuest.csproj.CopyComplete
 C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\CalculatorQuest.genruntimeconfig.cache
 C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\ref\CalculatorQuest.dll
+C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\CalculatorQuest.sourcelink.json
+C:\Users\Utilisateur\Documents\B2_info\Csharpe\CalculatorQuest\CalculatorQuest\obj\Debug\net6.0\Calculat.13876C7E.Up2Date

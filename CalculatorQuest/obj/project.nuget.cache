@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Pbr3bo8F/dN1zw8AtvNY4S/Lx2bpWJfDXUEIwlzoLctsaL59aec/Q56tp+a7djVONdmrW62fc78w99H5PkgOVA==",
+  "dgSpecHash": "LwwQ06d1smvwgxJbF5/Usr7o4xUiKw8QJfJonF7+uCDE41N3ksEpti838JyZdUC4t8slzMy6p1Gb+63WhA8WSg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Utilisateur\\Documents\\B2_info\\Csharpe\\CalculatorQuest\\CalculatorQuest\\CalculatorQuest.csproj",
   "expectedPackageFiles": [
@@ -73,7 +73,11 @@
     "C:\\Users\\Utilisateur\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\Utilisateur\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Utilisateur\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Utilisateur\\.nuget\\packages\\tmds.dbus.protocol\\0.15.0\\tmds.dbus.protocol.0.15.0.nupkg.sha512"
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\tmds.dbus.protocol\\0.15.0\\tmds.dbus.protocol.0.15.0.nupkg.sha512",
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.28\\microsoft.netcore.app.host.win-x64.6.0.28.nupkg.sha512"
   ],
   "logs": []
 }
